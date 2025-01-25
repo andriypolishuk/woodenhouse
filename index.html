@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WoodenHouse</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div id="container-vue" v-cloak>
+        <div class="container-fluid parallax">
+            <img src="sky.gif" class="layer layer1" alt="Layer 1">
+            <img src="house.gif" class="layer layer2" alt="Layer 2">
+            <img src="midle.gif" class="layer layer3" alt="Layer 3">
+            <img src="front2.gif" class="layer layer4" alt="Layer 4">
+            <img src="front1.gif" class="layer layer5" alt="Layer 5">
+        </div>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid grey">
+                <a class="navbar-brand" href="#">WoodenHouse</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link white-text"
+                                href="file:///C:/Users/Andry/Documents/WoodenHouse/kontakts.html">Зв'язок</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle white-text" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Список товарів
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item white-text" href="#">Для дівчат</a></li>
+                                <li><a class="dropdown-item white-text" href="#">Для хлопців</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item white-text" href="#">Універсальні подарунки</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+
+                    <div class="div search1">
+                        <label for="search-inp">Знайти за назвою:</label>
+                        <input type="text" v-model="search" v-on:input="updateSuggestions" v-on:keypress.enter="onEnter"
+                            id="search-inp" />
+                        <ul class="suggestions-list" v-if="suggestions.length">
+                            <li v-if="suggestions.length === 0">Нічого не знайдено</li>
+                            <li v-for="(suggestion, index) in suggestions" :key="index"
+                                v-html="highlightSuggestion(suggestion)" @click="selectSuggestion(suggestion)">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+        <aside class="left-panel hide-panel">
+            <button class="btn-aside btn-out"></button>
+            <ul class="menu-list main-menu">
+                <h2 class="filters">Фільтри</h2>
+                <li v-for="(item, index) in nameArr" v-on:click="showNotebook(index)">
+                    {{item}}
+                </li>
+            </ul>
+        </aside>
+
+        <aside class="right-panel hide-panel-right">
+            <button class="btn-aside-right btn-hrest-right"></button>
+            <h2 class="white-text">Кошик</h2>
+            <div v-if="cart.length === 0" class="cart-empty white-text">
+                <p>Корзина пуста</p>
+            </div>
+            <div v-else>
+                <div class="cart-item" v-for="(item, index) in cart" :key="item.id">
+                    <div class="cart-image">
+                        <img :src="item.img" alt="Товар" class="cart-img">
+                    </div>
+                    <div class="cart-details">
+                        <p><b>Назва:</b> {{ item.name }}</p>
+                        <p><b>Ціна:</b> {{ item.price }} грн</p>
+                        <p><b>Кількість:</b> {{ item.count }}</p>
+                        <a v-bind:href="`ShopPage.html?id=${item.id}`" class="link-special-page">Детальніше</a>
+                    </div>
+                    <div class="cart-actions">
+                        <div class="cart-count-container">
+                            <button class="cart-count" @click="plusFunction(item.id)">+</button>
+                            <button class="cart-count" @click="minusFunction(item.id)"
+                                :disabled="item.count === 0">-</button>
+                        </div>
+                        <button class="cart-delete" @click="removeItem(item.id)">Видалити</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <p>Додано товарів: {{ cartTotalCount() }} на суму: {{ cartTotalPrice() }} грн</p>
+                <a href="form-crate.html">
+                    <Button class="oformutu" :class="{ disabled: cart.length === 0 }" :disabled="cart.length === 0">
+                        {{ cart.length === 0 ? "Кошик порожній" : "Оформити замовлення" }}
+                    </Button>
+                </a>
+
+            </div>
+
+        </aside>
+
+        <h1 class="white-text">Список товарів</h1>
+        <div class="content">
+            <div class="card-wrap">
+                <div title="Натисніть, щоб перейти" class="card" v-for="(item, index) in chooseNotebooks"
+                    v-on:mouseenter="{hover = true; hoverNumber = index}" v-on:mouseleave="hover = false">
+                    <a v-bind:href="`ShopPage.html?id=${item.id}`" class="link-special-page">
+                        <div class="hover-div" v-if="hover == true && hoverNumber == index ">
+                            <div class="card-model card-item">
+                                <b>Ціна: </b> {{item.price}} грн
+                            </div>
+                            <div class="card-model card-item">
+                                <b>Матеріал: </b> {{item.material}}
+                            </div>
+                            <div class="card-item">
+                                <b>Для</b> {{item.for}}
+                            </div>
+                            <div class="card-item">
+                                <b>Тип: </b> {{item.model}}
+                            </div>
+                        </div>
+                        <img class="card-img-top" v-bind:src="item.img" alt="">
+                        <p class="card-name card-item">{{item.name}}</p>
+                    </a>
+                    <!-- Кнопка для додавання до корзини -->
+                    <div class="card-actions">
+                        <button @click="addToCart(item.id)" :class="{ added: addedItemId === item.id }">
+                            Додати до кошика
+                        </button>
+                        <!-- <button @click="addToCart(item.id)">Додати до корзини</button> -->
+                    </div>
+                </div>
+                <div class="no-info" v-if="chooseNotebooks.length == 0">
+                    <p>У нас ще нема товарів цього типу</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="footer">
+        <div class="container">
+            <div class="row align-items-between">
+                <div class="col-sm-6">
+
+                    <a href="https://www.tiktok.com/@andrusha_gribochek?_t=8qbZmXvA39h&_r=1" class="socio-link"><i
+                            class="tiktok fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.instagram.com/under.scoot/profilecard/?igsh=MTRiaGN0NnphcXJwaA=="
+                        class="socio-link"><i class="instagram fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@UnderScoot1" class="socio-link"><i
+                            class="youtube fa-brands fa-youtube"></i></a>
+                </div>
+                <div class="col-sm-6 text-md-end">
+                    <p><i class="fa-solid fa-copyright me-2"></i>Всі права захищено законом 2023</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
