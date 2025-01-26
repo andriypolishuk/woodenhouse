@@ -44,12 +44,12 @@
                                 Список товарів
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item white-text" href="#">Для дівчат</a></li>
-                                <li><a class="dropdown-item white-text" href="#">Для хлопців</a></li>
+                                <li><a class="dropdown-item white-text" @click="filterByCategory('дівчат')">Для дівчат</a></li>
+                                <li><a class="dropdown-item white-text" @click="filterByCategory('хлопців')">Для хлопців</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item white-text" href="#">Універсальні подарунки</a></li>
+                                <li><a class="dropdown-item white-text" @click="filterByCategory('будь-кого')">Універсальні подарунки</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -73,12 +73,21 @@
 
         <aside class="left-panel hide-panel">
             <button class="btn-aside btn-out"></button>
-            <ul class="menu-list main-menu">
+            <ul class="main-menu">
                 <h2 class="filters">Фільтри</h2>
+                <h3 class="filters">Тип товару:</h3>
                 <li v-for="(item, index) in nameArr" v-on:click="showNotebook(index)">
                     {{item}}
                 </li>
+                <h3 class="filters">Для кого:</h3>
+                <div class="filter-for">
+                    <button class="filter-button" @click="filterByCategory('дівчат')">Для дівчат</button>
+                    <button class="filter-button" @click="filterByCategory('хлопців')">Для хлопців</button>
+                    <button class="filter-button" @click="filterByCategory('будь-кого')">Для будь-кого</button>
+                </div>
+                <button @click="filterByCategory('all')" class="clear-filters">Скинути Фільтри</button>
             </ul>
+
         </aside>
 
         <aside class="right-panel hide-panel-right">

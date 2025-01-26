@@ -13,7 +13,7 @@ let NoteApp = {
                     id: '0001',
                     name: 'Декоративний елемент',
                     model: 'Автомобілі',
-                    for: 'дівчат',
+                    for: 'будь-кого',
                     material: 'дсп',
                     price: '1354',
                     img: '111.jpeg',
@@ -23,7 +23,7 @@ let NoteApp = {
                     id: '0002',
                     name: 'Класичний набір',
                     model: 'Домівки',
-                    for: 'дівчат',
+                    for: 'хлопців',
                     material: 'фанера',
                     price: '3712',
                     img: '222.jpeg',
@@ -34,7 +34,7 @@ let NoteApp = {
                     id: '0003',
                     name: 'Класичний набір',
                     model: 'Автомобілі',
-                    for: 'дівчат',
+                    for: 'будь-кого',
                     material: 'дсп',
                     price: '4105',
                     img: '333.jpeg',
@@ -54,7 +54,7 @@ let NoteApp = {
                     id: '0005',
                     name: 'Тематична прикраса',
                     model: 'Головоломки',
-                    for: 'дівчат',
+                    for: 'хлопців',
                     material: 'дсп',
                     price: '4877',
                     img: '333.jpeg',
@@ -64,7 +64,7 @@ let NoteApp = {
                     id: '0006',
                     name: "Дерев'яна скульптура",
                     model: 'Для ляльок',
-                    for: 'дівчат',
+                    for: 'хлопців',
                     material: 'акрил',
                     price: '4848',
                     img: '333.jpeg',
@@ -74,7 +74,7 @@ let NoteApp = {
                     id: '0007',
                     name: "Дерев'яна скульптура",
                     model: 'Для ляльок',
-                    for: 'дівчат',
+                    for: 'хлопців',
                     material: 'акрил',
                     price: '1803',
                     img: '111.jpeg',
@@ -84,7 +84,7 @@ let NoteApp = {
                     id: '0008',
                     name: 'Настільна гра',
                     model: 'Для ляльок',
-                    for: 'хлопців',
+                    for: 'будь-кого',
                     material: 'дсп',
                     price: '2620',
                     img: '222.jpeg',
@@ -144,7 +144,7 @@ let NoteApp = {
                     id: '0014',
                     name: 'Ручна робота',
                     model: 'Для ляльок',
-                    for: 'хлопців',
+                    for: 'будь-кого',
                     material: 'дсп',
                     price: '449',
                     img: '222.jpeg',
@@ -387,6 +387,15 @@ let NoteApp = {
             if (phoneInput) {
                 var im = new Inputmask("+380(99) 999 99 99");
                 im.mask(phoneInput);
+            }
+        },
+        filterByCategory(category) {
+            if (category === 'all') {
+                // Показати всі товари
+                this.chooseNotebooks = this.notebookArr;
+            } else {
+                // Фільтрувати товари за категорією
+                this.chooseNotebooks = this.notebookArr.filter(item => item.for === category);
             }
         }
     },
