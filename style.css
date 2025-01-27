@@ -902,10 +902,10 @@ html, body{
     background-color: rgb(51, 51, 51)
 }
 h1, h2, h3 {
-    font-family: "Lobster", "Arial", sans-serif;
+    /* font-family: "Lobster", "Arial", sans-serif; */
 }
 p, span, li, a, button{
-    font-family: "Dancing Script", "Arial", sans-serif;
+    /* font-family: "Dancing Script", "Arial", sans-serif; */
 }
 .navbar-brand:hover{
     color: rgb(139, 255, 135);
