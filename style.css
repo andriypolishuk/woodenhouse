@@ -109,6 +109,7 @@ body {
     text-shadow: 0px 0px 10px rgb(18, 18, 255);
     transition: 0.3s;
 }
+
 .container {
     color: white;
 }
@@ -147,7 +148,7 @@ body {
 
     }
 
-    .main-menu{
+    .main-menu {
         width: 100%;
     }
 
@@ -193,7 +194,7 @@ body {
 
 
 /* Для фільтрів лівої панелі */
-.filter-button{
+.filter-button {
     cursor: pointer;
     text-align: center;
     border-bottom: 1px solid grey;
@@ -207,24 +208,25 @@ body {
     border: none;
     border: 1px solid white;
 }
-.main-menu{
+
+.main-menu {
     list-style-type: none;
     padding-left: 0;
     margin-top: 70px;
     box-sizing: border-box;
-    min-height: 100vh;
     min-width: 200px;
     list-style-type: none;
     padding-left: 0;
     padding: 10px;
     max-width: 100%;
-    overflow-y: auto;
 }
+
 .main-menu li:hover {
     box-shadow: inset 0 0px 9px 0px white;
     color: white;
     text-shadow: 0px 0px 15px white;
 }
+
 .main-menu li {
     background-color: rgba(29, 29, 29, 0.795);
     color: white;
@@ -237,7 +239,8 @@ body {
     margin-top: 10px;
     width: 100%;
 }
-.clear-filters{
+
+.clear-filters {
     cursor: pointer;
     text-align: center;
     border-bottom: 1px solid grey;
@@ -251,6 +254,7 @@ body {
     border: 1px solid white;
     margin-top: 5vh;
 }
+
 /* Для фільтрів лівої панелі */
 
 
@@ -340,31 +344,55 @@ label {
 
 .left-panel {
     background-color: rgba(49, 49, 49, 0.900);
+    overflow-y: auto;
     z-index: 200;
     box-shadow: 0px 0px 20px rgb(112, 112, 112);
     width: 220px;
+    max-width: 100%;
     height: 100%;
     position: fixed;
     top: 0px;
     left: 0;
     transition: 0.8s;
+    direction: rtl;
+}
+
+.left-panel * {
+    direction: ltr;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+}
+
+::-webkit-scrollbar-track {
+    background: #2b2b2b;
+}
+
+.panel-overflow-y {
+    overflow-y: auto;
 }
 
 .btn-aside {
-    position: absolute;
-    left: 80%;
+    position: fixed;
+    left: 10px;
     top: 2vh;
     transition: 0.8s;
     background-color: rgb(63, 63, 63);
     color: rgb(119, 119, 119);
     font-size: 1.2rem;
     margin: 5px;
+    z-index: 300;
 }
 
 
 
 .btn-out {
-    left: 100%;
+    left: 10px;
 }
 
 .btn-out::after {
@@ -793,7 +821,8 @@ button.added {
 
 .parallax {
     position: relative;
-    height: 100vh; /* Висота паралаксу дорівнює висоті екрану */
+    height: 100vh;
+    /* Висота паралаксу дорівнює висоті екрану */
     overflow: hidden;
     margin: 0px;
 }
@@ -801,42 +830,53 @@ button.added {
 .layer {
     position: absolute;
     width: 100%;
-    height: 100%; /* Картинки заповнюють весь екран */
+    height: 100%;
+    /* Картинки заповнюють весь екран */
     top: 0;
     left: 0;
-    object-fit: cover; /* Пропорційне масштабування */
+    object-fit: cover;
+    /* Пропорційне масштабування */
     will-change: transform;
 }
 
 .navbar {
-    position: relative; /* Залишаємо навбар у звичайному потоці */
-    z-index: 1; /* Щоб він був над іншими елементами */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тінь для кращого вигляду */
+    position: relative;
+    /* Залишаємо навбар у звичайному потоці */
+    z-index: 1;
+    /* Щоб він був над іншими елементами */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Тінь для кращого вигляду */
 }
-html, body{
+
+html,
+body {
     scroll-behavior: smooth;
 }
-.parallax>img{
+
+.parallax>img {
     padding: 0px;
     border-radius: 0px;
 }
-.nova-poshta{
+
+.nova-poshta {
     color: red;
     background-color: white;
     font-weight: 900;
 }
 
-.ukr-poshta{
+.ukr-poshta {
     color: yellow;
     background-color: rgb(0, 191, 255);
     font-weight: 700;
 }
-.mist-express{
+
+.mist-express {
     background-color: aqua;
     color: rgb(255, 40, 40);
     font-weight: 500;
 }
-.comentar{
+
+.comentar {
     width: 80%;
     background-color: #ffffff;
     margin-bottom: 2vh;
@@ -844,30 +884,43 @@ html, body{
     padding: 10px;
     border: none;
 }
-.navbar-toggler{
+
+.navbar-toggler {
     background-color: rgb(88, 88, 88);
 }
-.collapsed{
+
+.collapsed {
     background-color: rgb(88, 88, 88);
     outline: none;
     border: none;
 }
-.navbar-collapse{
+
+.navbar-collapse {
     background-color: rgba(51, 51, 51, 0.87);
     width: 100%;
     padding-left: 10px;
     padding-right: 10px;
     border-radius: 0px 0px 5px 5px;
 }
-.grey{
+
+.grey {
     background-color: rgb(51, 51, 51)
 }
-h1, h2, h3 {
+
+h1,
+h2,
+h3 {
     /* font-family: "Lobster", "Arial", sans-serif; */
 }
-p, span, li, a, button{
+
+p,
+span,
+li,
+a,
+button {
     /* font-family: "Dancing Script", "Arial", sans-serif; */
 }
-.navbar-brand:hover{
+
+.navbar-brand:hover {
     color: rgb(139, 255, 135);
 }

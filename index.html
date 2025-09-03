@@ -7,8 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WoodenHouse</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Comfortaa:wght@400;500&display=swap&subset=cyrillic" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;500&display=swap&subset=cyrillic" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Comfortaa:wght@400;500&display=swap&subset=cyrillic"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;500&display=swap&subset=cyrillic"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -45,12 +49,15 @@
                                 Список товарів
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item white-text" @click="filterByCategory('дівчат')">Для дівчат</a></li>
-                                <li><a class="dropdown-item white-text" @click="filterByCategory('хлопців')">Для хлопців</a></li>
+                                <li><a class="dropdown-item white-text" @click="filterByCategory('дівчат')">Для
+                                        дівчат</a></li>
+                                <li><a class="dropdown-item white-text" @click="filterByCategory('хлопців')">Для
+                                        хлопців</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item white-text" @click="filterByCategory('будь-кого')">Універсальні подарунки</a></li>
+                                <li><a class="dropdown-item white-text"
+                                        @click="filterByCategory('будь-кого')">Універсальні подарунки</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -74,20 +81,23 @@
 
         <aside class="left-panel hide-panel">
             <button class="btn-aside btn-out"></button>
-            <ul class="main-menu">
-                <h2 class="filters">Фільтри</h2>
-                <h3 class="filters">Тип товару:</h3>
-                <li v-for="(item, index) in nameArr" v-on:click="showNotebook(index)">
-                    {{item}}
-                </li>
-                <h3 class="filters">Для кого:</h3>
-                <div class="filter-for">
-                    <button class="filter-button" @click="filterByCategory('дівчат')">Для дівчат</button>
-                    <button class="filter-button" @click="filterByCategory('хлопців')">Для хлопців</button>
-                    <button class="filter-button" @click="filterByCategory('будь-кого')">Для будь-кого</button>
-                </div>
-                <button @click="filterByCategory('all')" class="clear-filters">Скинути Фільтри</button>
-            </ul>
+            <div class="panel-overflow-y">
+                <ul class="main-menu">
+                    <h2 class="filters">Фільтри</h2>
+                    <h3 class="filters">Тип товару:</h3>
+                    <li v-for="(item, index) in nameArr" v-on:click="showNotebook(index)">
+                        {{item}}
+                    </li>
+                    <h3 class="filters">Для кого:</h3>
+                    <div class="filter-for">
+                        <button class="filter-button" @click="filterByCategory('дівчат')">Для дівчат</button>
+                        <button class="filter-button" @click="filterByCategory('хлопців')">Для хлопців</button>
+                        <button class="filter-button" @click="filterByCategory('будь-кого')">Для будь-кого</button>
+                    </div>
+                    <button @click="filterByCategory('all')" class="clear-filters">Скинути Фільтри</button>
+                </ul>
+            </div>
+
 
         </aside>
 

@@ -193,14 +193,6 @@ let NoteApp = {
 
             ],
             cart: [
-                {
-                    id: '0001',
-                    name: 'Автомобілі',
-                    price: '10000',
-                    img: '111.jpeg',
-                    link: 'ShopPage.html',
-                    count: 0
-                },
             ],
             chooseName: '', // Початково вибраний фільтр (порожній для всіх карток)
             chooseIndex: 0,
@@ -360,27 +352,6 @@ let NoteApp = {
                 window.location.href = "index.html";
             }
         },
-        // Для отправки на емай 
-        // addCartToForm() {
-        //     const form = document.querySelector('.form-contacts');
-
-        //     const cartData = this.cart.map(item => {
-        //         return `ІД: ${item.id}, Назва: ${item.name}, Кількість: ${item.count}`;
-        //     }).join('\n');
-
-        //     const cartField = document.createElement('input');
-        //     cartField.type = 'hidden';
-        //     cartField.name = 'cart_data';
-        //     cartField.value = cartData;
-        //     form.appendChild(cartField);
-
-        //     const cartSummary = `Додано товарів: ${this.cartTotalCount()} на суму: ${this.cartTotalPrice()} грн`;
-        //     const summaryField = document.createElement('input');
-        //     summaryField.type = 'hidden';
-        //     summaryField.name = 'cart_summary';
-        //     summaryField.value = cartSummary;
-        //     form.appendChild(summaryField);
-        // },
 
         applyPhoneMask() {
             var phoneInput = this.$refs.phone;
