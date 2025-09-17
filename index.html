@@ -23,11 +23,11 @@
 
     <div id="container-vue" v-cloak>
         <div class="container-fluid parallax">
-            <img src="sky.gif" class="layer layer1" alt="Layer 1">
-            <img src="house.gif" class="layer layer2" alt="Layer 2">
-            <img src="midle.gif" class="layer layer3" alt="Layer 3">
-            <img src="front2.gif" class="layer layer4" alt="Layer 4">
-            <img src="front1.gif" class="layer layer5" alt="Layer 5">
+            <img src="five.png" class="layer layer1" alt="Layer 1">
+            <img src="four.png" class="layer layer2" alt="Layer 2">
+            <img src="thirt.png" class="layer layer3" alt="Layer 3">
+            <img src="second.png" class="layer layer4" alt="Layer 4">
+            <img src="first.png" class="layer layer5" alt="Layer 5">
         </div>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid grey">
@@ -85,9 +85,12 @@
                 <ul class="main-menu">
                     <h2 class="filters">Фільтри</h2>
                     <h3 class="filters">Тип товару:</h3>
-                    <li v-for="(item, index) in nameArr" v-on:click="showNotebook(index)">
-                        {{item}}
-                    </li>
+                    <a href="#spisok">
+                        <li v-for="(item, index) in nameArr" v-on:click="showNotebook(index)">
+                            {{item}}
+                        </li>
+                    </a>
+
                     <h3 class="filters">Для кого:</h3>
                     <div class="filter-for">
                         <button class="filter-button" @click="filterByCategory('дівчат')">Для дівчат</button>
@@ -140,7 +143,7 @@
 
         </aside>
 
-        <h1 class="white-text">Список товарів</h1>
+        <h1 class="white-text" id="spisok">Список товарів</h1>
         <div class="content">
             <div class="card-wrap">
                 <div title="Натисніть, щоб перейти" class="card" v-for="(item, index) in chooseNotebooks"

@@ -7,7 +7,7 @@
 .grey {
     background-color: rgb(44, 44, 44);
 
-    height: 5vh;
+    min-height: 5vh;
 
 }
 
@@ -163,28 +163,30 @@ body {
     margin: 30px;
 }
 
-.hover-div {
+.hover-div{
     border-radius: 0px 0px 5px 5px;
     position: absolute;
     bottom: 0;
     left: 0;
-    transform: translateY(125px);
-    height: 125px;
-    width: 100%;
+    transform: translateY(160px);
+    min-height: 160px;
+    width: 100%;    
     background-color: rgb(44, 44, 44);
     z-index: 5;
-    padding: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 0px;
     box-sizing: border-box;
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    padding-top: 30px;
-
+    box-shadow: 0px 12px 10px black ;
 }
 
 .card-item {
-    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-top: 0px;
 }
 
 .card-name {
@@ -239,7 +241,9 @@ body {
     margin-top: 10px;
     width: 100%;
 }
-
+.main-menu>a{
+    text-decoration: none;
+}
 .clear-filters {
     cursor: pointer;
     text-align: center;
@@ -640,6 +644,7 @@ button.added {
     color: white;
     border: 1px solid rgb(255, 255, 255);
     transition: background-color 0.3s, color 0.3s;
+    z-index: 7;
 }
 
 .right-panel.hide-panel-right~.btn-aside-right {

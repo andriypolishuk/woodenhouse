@@ -11,185 +11,185 @@ let NoteApp = {
             notebookArr: [
                 {
                     id: '0001',
-                    name: 'Декоративний елемент',
-                    model: 'Автомобілі',
+                    name: 'Ляльковий будинок',
+                    model: 'Лялькові будинки',
                     for: 'будь-кого',
-                    material: 'дсп',
-                    price: '1354',
-                    img: '111.jpeg',
+                    material: 'ДВП ламіноване кольором',
+                    price: '950',
+                    img: 'Lyalkoviy_Budinochok.jpg',
                     link: 'ShopPage.html'
                 },
-                {
-                    id: '0002',
-                    name: 'Класичний набір',
-                    model: 'Домівки',
-                    for: 'хлопців',
-                    material: 'фанера',
-                    price: '3712',
-                    img: '222.jpeg',
-                    link: 'ShopPage.html'
+                // {
+                //     id: '0002',
+                //     name: 'Класичний набір',
+                //     model: 'Домівки',
+                //     for: 'хлопців',
+                //     material: 'фанера',
+                //     price: '3712',
+                //     img: '222.jpeg',
+                //     link: 'ShopPage.html'
 
-                },
-                {
-                    id: '0003',
-                    name: 'Класичний набір',
-                    model: 'Автомобілі',
-                    for: 'будь-кого',
-                    material: 'дсп',
-                    price: '4105',
-                    img: '333.jpeg',
-                    link: 'ShopPage.html'
-                },
-                {
-                    id: '0004',
-                    name: 'Класичний набір',
-                    model: "Інтер'єр",
-                    for: 'дівчат',
-                    material: 'дсп',
-                    price: '4105',
-                    img: '222.jpeg',
-                    link: 'ShopPage.html'
-                },
-                {
-                    id: '0005',
-                    name: 'Тематична прикраса',
-                    model: 'Головоломки',
-                    for: 'хлопців',
-                    material: 'дсп',
-                    price: '4877',
-                    img: '333.jpeg',
-                    link: 'ShopPage.html'
-                },
-                {
-                    id: '0006',
-                    name: "Дерев'яна скульптура",
-                    model: 'Для ляльок',
-                    for: 'хлопців',
-                    material: 'акрил',
-                    price: '4848',
-                    img: '333.jpeg',
-                    link: 'ShopPage.html'
-                },
-                {
-                    id: '0007',
-                    name: "Дерев'яна скульптура",
-                    model: 'Для ляльок',
-                    for: 'хлопців',
-                    material: 'акрил',
-                    price: '1803',
-                    img: '111.jpeg',
-                    link: 'ShopPage.html'
-                },
-                {
-                    id: '0008',
-                    name: 'Настільна гра',
-                    model: 'Для ляльок',
-                    for: 'будь-кого',
-                    material: 'дсп',
-                    price: '2620',
-                    img: '222.jpeg',
-                    link: 'ShopPage.html'
-                },
-                {
-                    id: '0009',
-                    name: 'Настільна гра',
-                    model: 'Для ляльок',
-                    for: 'хлопців',
-                    material: 'акрил',
-                    price: '1118',
-                    img: '333.jpeg',
-                    link: 'ShopPage.html'
-                },
-                {
-                    id: '0010',
-                    name: 'Класичний набір',
-                    model: 'Для ляльок',
-                    for: 'дівчат',
-                    material: 'дсп',
-                    price: '3534',
-                    img: '111.jpeg',
-                    link: 'ShopPage.html'
-                },
-                {
-                    id: '0011',
-                    name: 'Настільна гра',
-                    model: 'Для ляльок',
-                    for: 'дівчат',
-                    material: 'фанера',
-                    price: '3722',
-                    img: '222.jpeg',
-                    link: 'ShopPage.html'
-                },
-                {
-                    id: '0012',
-                    name: "Дерев'яна скульптура",
-                    model: 'Для ляльок',
-                    for: 'дівчат',
-                    material: 'акрил',
-                    price: '216',
-                    img: '333.jpeg',
-                    link: 'ShopPage.html'
-                },
-                {
-                    id: '0013',
-                    name: 'Класичний набір',
-                    model: 'Для ляльок',
-                    for: 'дівчат',
-                    material: 'фанера',
-                    price: '4524',
-                    img: '111.jpeg',
-                    link: 'ShopPage.html'
-                },
-                {
-                    id: '0014',
-                    name: 'Ручна робота',
-                    model: 'Для ляльок',
-                    for: 'будь-кого',
-                    material: 'дсп',
-                    price: '449',
-                    img: '222.jpeg',
-                    link: 'ShopPage.html'
-                },
-                {
-                    id: '0015',
-                    name: 'Фігурка',
-                    model: 'Для дорослих',
-                    for: 'дівчат',
-                    material: 'фанера',
-                    price: '2783',
-                    img: '333.jpeg',
-                    link: 'ShopPage.html'
-                },
-                {
-                    id: '0016',
-                    name: "Дерев'яна прикраса",
-                    model: 'Для дорослих',
-                    for: 'дівчат',
-                    material: 'дсп',
-                    price: '1820',
-                    img: '111.jpeg',
-                    link: 'ShopPage.html'
-                },
-                {
-                    id: '0016',
-                    name: "Дерев'яна прикраса",
-                    model: 'Іграшки',
-                    for: 'дівчат',
-                    material: 'дсп',
-                    price: '1820',
-                    img: '111.jpeg',
-                    link: 'ShopPage.html'
-                },
-                {
-                    id: '0016',
-                    name: "Дерев'яна прикраса",
-                    model: 'Іграшки',
-                    for: 'дівчат',
-                    material: 'дсп',
-                    price: '1820',
-                    img: '111.jpeg',
-                    link: 'ShopPage.html'
-                }
+                // },
+                // {
+                //     id: '0003',
+                //     name: 'Класичний набір',
+                //     model: 'Автомобілі',
+                //     for: 'будь-кого',
+                //     material: 'дсп',
+                //     price: '4105',
+                //     img: '333.jpeg',
+                //     link: 'ShopPage.html'
+                // },
+                // {
+                //     id: '0004',
+                //     name: 'Класичний набір',
+                //     model: "Інтер'єр",
+                //     for: 'дівчат',
+                //     material: 'дсп',
+                //     price: '4105',
+                //     img: '222.jpeg',
+                //     link: 'ShopPage.html'
+                // },
+                // {
+                //     id: '0005',
+                //     name: 'Тематична прикраса',
+                //     model: 'Головоломки',
+                //     for: 'хлопців',
+                //     material: 'дсп',
+                //     price: '4877',
+                //     img: '333.jpeg',
+                //     link: 'ShopPage.html'
+                // },
+                // {
+                //     id: '0006',
+                //     name: "Дерев'яна скульптура",
+                //     model: 'Для ляльок',
+                //     for: 'хлопців',
+                //     material: 'акрил',
+                //     price: '4848',
+                //     img: '333.jpeg',
+                //     link: 'ShopPage.html'
+                // },
+                // {
+                //     id: '0007',
+                //     name: "Дерев'яна скульптура",
+                //     model: 'Для ляльок',
+                //     for: 'хлопців',
+                //     material: 'акрил',
+                //     price: '1803',
+                //     img: '111.jpeg',
+                //     link: 'ShopPage.html'
+                // },
+                // {
+                //     id: '0008',
+                //     name: 'Настільна гра',
+                //     model: 'Для ляльок',
+                //     for: 'будь-кого',
+                //     material: 'дсп',
+                //     price: '2620',
+                //     img: '222.jpeg',
+                //     link: 'ShopPage.html'
+                // },
+                // {
+                //     id: '0009',
+                //     name: 'Настільна гра',
+                //     model: 'Для ляльок',
+                //     for: 'хлопців',
+                //     material: 'акрил',
+                //     price: '1118',
+                //     img: '333.jpeg',
+                //     link: 'ShopPage.html'
+                // },
+                // {
+                //     id: '0010',
+                //     name: 'Класичний набір',
+                //     model: 'Для ляльок',
+                //     for: 'дівчат',
+                //     material: 'дсп',
+                //     price: '3534',
+                //     img: '111.jpeg',
+                //     link: 'ShopPage.html'
+                // },
+                // {
+                //     id: '0011',
+                //     name: 'Настільна гра',
+                //     model: 'Для ляльок',
+                //     for: 'дівчат',
+                //     material: 'фанера',
+                //     price: '3722',
+                //     img: '222.jpeg',
+                //     link: 'ShopPage.html'
+                // },
+                // {
+                //     id: '0012',
+                //     name: "Дерев'яна скульптура",
+                //     model: 'Для ляльок',
+                //     for: 'дівчат',
+                //     material: 'акрил',
+                //     price: '216',
+                //     img: '333.jpeg',
+                //     link: 'ShopPage.html'
+                // },
+                // {
+                //     id: '0013',
+                //     name: 'Класичний набір',
+                //     model: 'Для ляльок',
+                //     for: 'дівчат',
+                //     material: 'фанера',
+                //     price: '4524',
+                //     img: '111.jpeg',
+                //     link: 'ShopPage.html'
+                // },
+                // {
+                //     id: '0014',
+                //     name: 'Ручна робота',
+                //     model: 'Для ляльок',
+                //     for: 'будь-кого',
+                //     material: 'дсп',
+                //     price: '449',
+                //     img: '222.jpeg',
+                //     link: 'ShopPage.html'
+                // },
+                // {
+                //     id: '0015',
+                //     name: 'Фігурка',
+                //     model: 'Для дорослих',
+                //     for: 'дівчат',
+                //     material: 'фанера',
+                //     price: '2783',
+                //     img: '333.jpeg',
+                //     link: 'ShopPage.html'
+                // },
+                // {
+                //     id: '0016',
+                //     name: "Дерев'яна прикраса",
+                //     model: 'Для дорослих',
+                //     for: 'дівчат',
+                //     material: 'дсп',
+                //     price: '1820',
+                //     img: '111.jpeg',
+                //     link: 'ShopPage.html'
+                // },
+                // {
+                //     id: '0017',
+                //     name: "Дерев'яна прикраса",
+                //     model: 'Іграшки',
+                //     for: 'дівчат',
+                //     material: 'дсп',
+                //     price: '1820',
+                //     img: '111.jpeg',
+                //     link: 'ShopPage.html'
+                // },
+                // {
+                //     id: '0018',
+                //     name: "Дерев'яна прикраса",
+                //     model: 'Іграшки',
+                //     for: 'дівчат',
+                //     material: 'дсп',
+                //     price: '1820',
+                //     img: '111.jpeg',
+                //     link: 'ShopPage.html'
+                // }
 
             ],
             cart: [
