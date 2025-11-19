@@ -44,31 +44,57 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="product-img">
-                        <img :src="product.img" class="d-block w-100" alt="Product Image">
+                        <div id="carouselExampleIndicators" class="carousel slide">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner" v-bind="(item, index) in notebookArr">
+                                <div class="carousel-item active">
+                                <img v-bind:src="product.img" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                <img v-bind:src="product.img2" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                <img v-bind:src="product.img3" class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <!-- <img :src="product.img" class="d-block w-100" alt="Product Image"> -->
                     </div>
                 </div>
                 <div class="col-md-6">
                     <h1 class="product-name" id="product-name">{{ product.name }}</h1>
+                    <div class="buy-div">
+                        <p>Ціна: {{ product.price }} грн</p>
+                        <button class="buy" @click="addToCart(product.id)" :class="{ added: addedItemId === product.id }">Купити</button>
+                    </div>
+
                     <div class="opis-tovaru">
-                        <p><b>Опис:</b>  Слава Україні. Ми намагаємося працювати і втримати наші ціни, тому наші будиночки залишилися майже в тій ціні,як і до війни.</p>
-                        <p>Особливо зараз дітям потрібні ігри з власним будиночком,щоб відчувати себе в безпеці,в комфорті.
-                            Вже понад тисячі проданих будиночків. Дуже вдячні за ваші фото та відгуки.</p>
-                        <p>Ламінована ХДФ</p>
-                        <p>Для довідки - ХДФ або HDF (High Density Fiberboard) - це інноваційний матеріал, деревоволокниста плита дуже високої щільності. Для її виробництва
-                            використовується тільки екологічно чиста
-                            деревина, без фенолформальдегідних смол
-                            та інших шкідливих домішок. Тому по
-                            екологічності цей матеріал можна
-                            порівнювати з натуральним деревом.</p>
-                        <p>Висилаємо в розібраному стані. Збирати ,як 3D конструктор,по інструкції. Клей додається до комплекту. Використовуєте точечно, в пази,де потрібно.</p>
-                        <p>Термін висилання 1-3 дні. В залежності від навантаження на свята.</p>
+                        {{product.description}}
                     </div>
                     
                     <h2 class="harakteristiki">Характеристики</h2>
                     <p id="product-description">Назва товару: {{ product.model }}</p>
+                    <p id="product-description">Тип товару: {{product.model}}</p>
                     <p id="product-description">Матеріал: {{ product.material }}</p>
                     <p id="product-description">Ціна: {{ product.price }} грн</p>
-                </div>                
+                    <p id="product-description">Підходить для {{product.for}}</p>
+
+                </div>    
+                <div class="col-md-6 shopPageImages" v-for="(item, index) in notebookArr">
+                    
+                </div>            
             </div>
         </div>
 
