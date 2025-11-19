@@ -58,14 +58,6 @@ body {
     background-color: rgb(44, 44, 44);
 }
 
-.buy {
-    border-radius: 5px;
-    border: none;
-    background-color: red;
-    height: 5vh;
-    width: 10vh;
-}
-
 .row {
     margin: 10px;
 }
@@ -915,7 +907,7 @@ body {
 h1,
 h2,
 h3 {
-    /* font-family: "Lobster", "Arial", sans-serif; */
+    font-family: "Lobster", "Arial", sans-serif;
 }
 
 p,
@@ -923,9 +915,26 @@ span,
 li,
 a,
 button {
-    /* font-family: "Dancing Script", "Arial", sans-serif; */
+    font-family: "Dancing Script", "Arial", sans-serif;
 }
 
 .navbar-brand:hover {
     color: rgb(139, 255, 135);
+}
+.buy{
+    background-color: red;
+    border-radius: 5px;
+    width: 10vh;
+    height: 5vh;
+    border: none;
+    color: white;
+}
+.buy-div{
+    display: flex;
+    align-items: center;
+    
+}
+.buy-div>p{
+    margin-bottom: 0;
+    margin-right: 2rem;
 }
